@@ -18,7 +18,7 @@ onMounted(() => {
   new Chart(ctx, {
     type: "line", // Tipo 'line' para gráfico de área
     data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"], // Meses abreviados
       datasets: [
         {
           label: "Sales",
@@ -32,6 +32,15 @@ onMounted(() => {
     },
     options: {
       scales: {
+        x: {
+          ticks: {
+            callback: function(value, index, values) {
+              return this.getLabelForValue(value).slice(0, 3); // Abrevia os nomes dos meses
+            },
+            maxRotation: 0, // Alinha o texto horizontalmente
+            minRotation: 0, // Garante que não haja rotação
+          },
+        },
         y: {
           beginAtZero: true, // Eixo Y começa do zero
         },
