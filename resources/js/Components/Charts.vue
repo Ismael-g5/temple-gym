@@ -14,7 +14,7 @@ const chartRef = ref(null);
 const chartRef2 = ref(null);
 
 onMounted(async () => {
-  await nextTick(); // Espera a renderização completa
+  await nextTick();
 
   const ctx = chartRef.value.getContext("2d");
   const btx = chartRef2.value.getContext("2d");
@@ -90,11 +90,11 @@ onMounted(async () => {
 <template>
   <main>
     <div class="px-4 pt-6">
-      <div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
-        <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+      <div class="grid gap-4 xl:grid-cols-2 items-center">
+        <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
           <div class="flex items-center justify-between mb-4">
             <div class="flex-shrink-0">
-              <span class="text-xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">$45,385</span>
+              <span class="text-xl font-bold leading-none text-gray-900 dark:text-white">$45,385</span>
               <h3 class="text-base font-light text-gray-500 dark:text-gray-400">Sales this week</h3>
             </div>
             <div class="flex items-center justify-end flex-1 text-base font-medium text-green-500 dark:text-green-400">
@@ -106,15 +106,11 @@ onMounted(async () => {
           </div>
           <canvas ref="chartRef" width="400" height="200"></canvas>
         </div>
-      </div>
-    </div>
-    
-    <div class="px-4 pt-6">
-      <div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
-        <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+        
+        <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
           <div class="flex items-center justify-between mb-4">
             <div class="flex-shrink-0">
-              <span class="text-xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">$45,385</span>
+              <span class="text-xl font-bold leading-none text-gray-900 dark:text-white">$45,385</span>
               <h3 class="text-base font-light text-gray-500 dark:text-gray-400">Sales this week</h3>
             </div>
             <div class="flex items-center justify-end flex-1 text-base font-medium text-green-500 dark:text-green-400">
@@ -130,6 +126,7 @@ onMounted(async () => {
     </div>
   </main>
 </template>
+
 
 <style scoped>
 
