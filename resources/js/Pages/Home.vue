@@ -5,11 +5,16 @@ import Sidebar from '@/Components/Sidebar.vue';
 import NavBar from '@/Components/NavBar.vue';
 import CountData from '@/Components/CountData.vue';
 import Chart from '@/Components/Charts.vue';
+import Footer from '@/Components/Footer.vue';
+import { usePage } from '@inertiajs/vue3'; // Importa o usePage
+
+const { url } = usePage();
+
 
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Home" />
 
    
       <NavBar />
@@ -22,10 +27,12 @@ import Chart from '@/Components/Charts.vue';
             <!-- Conteúdo principal do dashboard -->
             <div class="flex-grow py-4">
                 <div class="max-w-5xl mx-auto mr-12 lg:px-3 py-12">
-                    <CountData />
-                    <Chart />
+                    <Chart  :key="url" />
                 </div>
+
+                <Footer />
             </div>
+            
         </div>
   
 </template>

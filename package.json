@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "chart.js": "^4.4.4",
-        "material-icons": "^1.13.12"
+        "material-icons": "^1.13.12",
+        "vuex": "^4.0.2"
     }
 }
