@@ -9,7 +9,9 @@ import Footer from '@/Components/Footer.vue';
 import { usePage } from '@inertiajs/vue3'; // Importa o usePage
 
 const { url } = usePage();
+const values = [1, 3, 5, 6];
 
+console.log(url);
 
 </script>
 
@@ -27,7 +29,7 @@ const { url } = usePage();
             <!-- Conteúdo principal do dashboard -->
             <div class="flex-grow py-4">
                 <div class="max-w-5xl mx-auto mr-12 lg:px-3 py-12">
-                    <Chart  :key="url" />
+                    <Chart  :key="url" :titlePage="url" :data="values" />
                 </div>
 
                 <Footer />
